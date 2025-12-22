@@ -1,0 +1,43 @@
+<div class="panel" *ngIf="edit.enabled">
+  <div class="panel-header">
+    <span>Edit Station</span>
+    <button class="panel-close" (click)="close()">×</button>
+  </div>
+
+  <h4>Edit Station</h4>
+
+  <div *ngIf="!edit.selectedFeature">
+    <p>Click a station on the map to edit.</p>
+  </div>
+
+  <form *ngIf="edit.selectedFeature && edit.draft">
+
+    <label>
+      Name
+      <input type="text" [(ngModel)]="edit.draft.sttnname" name="name" />
+    </label>
+
+    <label>
+      Code
+      <input type="text" [(ngModel)]="edit.draft.sttncode" name="code" />
+    </label>
+
+    <label>
+      Division
+      <input type="text" [(ngModel)]="edit.draft.division" name="division" />
+    </label>
+
+    <div class="actions">
+      <button type="button" (click)="save()" [disabled]="saving">
+        {{ saving ? 'Saving...' : 'Save' }}
+      </button>
+
+      <button type="button" (click)="cancel()" [disabled]="saving">
+        Cancel
+      </button>
+    </div>
+
+    <div class="error" *ngIf="error">{{ error }}</div>
+  </form>
+
+</div>

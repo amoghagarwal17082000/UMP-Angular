@@ -1,0 +1,33 @@
+/* .panel {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 220px;
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 2000;
+} */
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.symbol {
+  margin-right: 8px;
+}
+
+.symbol.point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.symbol.line {
+  width: 18px;
+  height: 3px;
+}

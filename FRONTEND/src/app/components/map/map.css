@@ -1,0 +1,32 @@
+/* Make the map fill the screen but start below the fixed topbar */
+#map {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 78px;          /* same as topbar height */
+
+  width: 100%;
+  display: block;
+}
+
+/* phones: allow extra space for 2-row topbar */
+@media (max-width: 767.98px) {
+  #map {
+    top: 120px;
+  }
+}
+
+/* tablets */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  #map {
+    top: 96px;
+  }
+}
+
+/* desktop */
+@media (min-width: 1200px) {
+  #map {
+    top: 78px;
+  }
+}

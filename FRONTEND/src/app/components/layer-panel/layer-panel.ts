@@ -1,0 +1,31 @@
+import { Component } from '@angular/core';
+import { UiState } from '../../services/ui-state';
+import { LayerManager } from '../../layers/layer-manager';
+import { MapRegistry } from '../../services/map-registry';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+
+@Component({
+  selector: 'app-layer-panel',
+  imports: [CommonModule, FormsModule],
+  templateUrl: './layer-panel.html',
+  styleUrl: './layer-panel.css',
+})
+export class LayerPanel {
+constructor(public ui: UiState,                 
+    public layerManager: LayerManager,  
+    private mapRegistry: MapRegistry   ) {}
+
+    close() {
+      this.ui.activePanel = null;
+    }
+
+    toggleLayer() {
+    if (!this.mapRegistry.hasMap()) return;
+
+    const map = this.mapRegistry.getMap();
+    this.layerManager.applyVisibility(map);
+    this.layerManager.reloadVisible(map);
+  }
+}

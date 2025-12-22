@@ -1,0 +1,103 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-tile {
+  width: 256px !important;
+  height: 256px !important;
+}
+
+:root{
+  --topbar-h: 78px;      /* same as your topbar height */
+  --panel-gap: 10px;
+}
+
+/* All panels across the app */
+.panel{
+  position: absolute;
+  top: calc(var(--topbar-h) + var(--panel-gap));
+  right: 10px;
+
+  width: 400px;
+  height: 400px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 10px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 1500;
+}
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 28px;          /* ⬅ normalize header height */
+  margin-bottom: 8px;
+}
+
+/* Close button – normalized */
+.panel-close {
+  width: 24px;              /* ⬅ fixed size */
+  height: 24px;
+  line-height: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+  font-size: 16px;          /* ⬅ reduced from 18px */
+  font-weight: 600;
+  cursor: pointer;
+
+  color: #555;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.panel-close:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: #000;
+}
+
+/* Make sure the close button never inherits the big "panel button" styling */
+.panel-header .panel-close{
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  max-width: 24px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+  border: none !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
+
+
+/* Mobile: topbar becomes taller when it wraps */
+@media (max-width: 767.98px){
+  :root{ --topbar-h: 120px; }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199.98px){
+  :root{ --topbar-h: 96px; }
+}
+

@@ -1,0 +1,25 @@
+/* .panel {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 220px;
+  background: white;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  z-index: 2000;
+} */
+
+.panel button :not(.panel-close){
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 6px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+}
+
+.panel button:hover {
+  background: #e5e7eb;
+}
