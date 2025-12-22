@@ -49,12 +49,14 @@ export class Map implements AfterViewInit {
     this.mapRegistry.setMap(this.map);
 
     // Tile Layer (OpenStreetMap)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxNativeZoom: 17,
-      maxZoom: 22,
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(this.map);
-
+    L.tileLayer(
+      'https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+      {
+        maxNativeZoom: 17,
+        maxZoom: 22,
+        attribution: 'Tiles © Esri'
+      }
+    ).addTo(this.map);
      // Register layers
     this.layerManager.register(
       new StationLayer(this.api, this.filters, this.edit)

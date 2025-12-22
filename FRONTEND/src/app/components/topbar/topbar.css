@@ -64,3 +64,32 @@
 .widgets i {
   font-size: 20px;
 }
+
+/* Topbar container should align items nicely */
+:host {
+  display: block;
+}
+
+.brand-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+/* ✅ Fix logo sizing */
+.brand-logo{
+  height: 40px;        /* change to 28/32/40 as you like */
+  width: 40px;         /* keep square (good for round logo) */
+  object-fit: contain; /* keep full logo visible */
+  border-radius: 150%;  
+  flex: 0 0 auto;      /* prevent stretching */
+}
+
+/* Optional: keep title aligned */
+.brand{
+  line-height: 1;
+  font-size: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+}

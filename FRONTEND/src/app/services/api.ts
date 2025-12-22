@@ -11,7 +11,7 @@ export class Api {
 
    constructor(private http: HttpClient) {}
 
-   getStations(bbox: string, code?: string, division?: string) {
+getStations(bbox: string, code?: string, division?: string) {
   let params: any = { bbox };
 
   if (code) params.code = code;
@@ -23,6 +23,12 @@ export class Api {
 
   getTracks(bbox: string) {
   return this.http.get<any>(`${this.BASE_URL}/api/tracks`, {
+    params: { bbox }
+  });
+}
+
+getkmposts(bbox: string) {
+  return this.http.get<any>(`${this.BASE_URL}/api/km_posts`, {
     params: { bbox }
   });
 }

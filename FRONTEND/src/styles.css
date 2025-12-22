@@ -89,6 +89,18 @@ html, body {
   line-height: 1 !important;
 }
 
+/* Remove background box from station labels */
+.leaflet-tooltip.station-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: #111;          /* label text color */
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
 
 
 /* Mobile: topbar becomes taller when it wraps */
